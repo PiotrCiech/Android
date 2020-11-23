@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/holo_green_dark">
+
+    <Button
+        android:id="@+id/ButtonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="logout1"
+        android:text="Logout"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        tools:ignore="NotSibling" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved Fragment"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
