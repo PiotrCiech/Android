@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
                             break;
                         case R.id.nav_search:
-                            selectedFragment = new SearchFragment();
+                            selectedFragment = new MapsFragment();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                             break;
                         case R.id.nav_saved:
