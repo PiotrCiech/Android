@@ -86,6 +86,21 @@ public class MapFragment extends FragmentActivity implements OnMapReadyCallback 
 
                     }
                 }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+
+                }
             });
         } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
@@ -106,6 +121,21 @@ public class MapFragment extends FragmentActivity implements OnMapReadyCallback 
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+
                 }
             });
         }
