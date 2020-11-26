@@ -19,14 +19,14 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
     private static final Object LOCK = new Object();
     private static final String DATABASE_NAME = "dbflat.db";
-    private static AppDatabase sIntance;
+    private static AppDatabase sInstance;
 
     public abstract  FlatDao flatDao();
 
     public static AppDatabase getInstance(final Context context){
-        if(sIntance == null){
+        if(sInstance == null){
             synchronized (LOCK){
-                sIntance = Room.databaseBuilder(context.getApplicationContext(),
+                sInstance = Room.databaseBuilder(context.getApplicationContext(),
                         AppDatabase.class,AppDatabase.DATABASE_NAME)
                         .addCallback(new Callback(){
                             @Override
@@ -45,6 +45,6 @@ public abstract class AppDatabase extends RoomDatabase {
                         }).build();
             }
         }
-        return sIntance;
+        return sInstance;
     }
 }

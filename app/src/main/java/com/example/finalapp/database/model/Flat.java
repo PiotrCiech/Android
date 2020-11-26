@@ -1,5 +1,7 @@
 package com.example.finalapp.database.model;
 
+import android.content.Intent;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -44,7 +46,7 @@ public class Flat {
         this.cost = cost;
     }
 
-    public int getRoom() {
+    public Integer getRoom() {
         return room;
     }
 

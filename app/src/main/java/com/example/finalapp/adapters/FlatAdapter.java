@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class FlatAdapter extends RecyclerView.Adapter<FlatAdapter.FlatViewHolder>{
+public class FlatAdapter extends RecyclerView.Adapter<FlatAdapter.FlatViewHolder> {
 
     private List<Flat> flatList;
 
@@ -27,7 +27,7 @@ public class FlatAdapter extends RecyclerView.Adapter<FlatAdapter.FlatViewHolder
     @Override
     public FlatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.flat_item,parent,false);
+                .inflate(R.layout.flat_item, parent, false);
         return new FlatViewHolder(view);
     }
 
@@ -35,8 +35,10 @@ public class FlatAdapter extends RecyclerView.Adapter<FlatAdapter.FlatViewHolder
     public void onBindViewHolder(@NonNull FlatViewHolder holder, int position) {
         Flat flat = flatList.get(position);
         if (flat != null) {
-            holder.apartment.setText(flat.getId());
-            holder.apartmentCategory.setText(flat.getId());
+            holder.apartment.setText(flat.getAddress());
+            holder.apartmentPrice.setText(flat.getCost() + "");
+            holder.apartmentRoom.setText(flat.getRoom() + "" );
+
         }
     }
 
@@ -45,25 +47,26 @@ public class FlatAdapter extends RecyclerView.Adapter<FlatAdapter.FlatViewHolder
         return flatList.size();
     }
 
-    public void addFlatList(List<Flat> flats){
+    public void addFlatList(List<Flat> flats) {
         flatList = flats;
         notifyDataSetChanged();
     }
 
-    public static class FlatViewHolder extends RecyclerView.ViewHolder{
+    public static class FlatViewHolder extends RecyclerView.ViewHolder {
         TextView apartment;
-        TextView apartmentCategory;
-        public FlatViewHolder(@NonNull View itemView){
+        TextView apartmentPrice;
+        TextView apartmentRoom;
+
+        public FlatViewHolder(@NonNull View itemView) {
             super(itemView);
             apartment = itemView.findViewById(R.id.apartment);
-            apartmentCategory = itemView.findViewById(R.id.apartment_category);
+            apartmentPrice = itemView.findViewById(R.id.apartment_category);
+            apartmentRoom = itemView.findViewById(R.id.room_number);
+
+
         }
 
 
-
     }
-
-
-
-    }
+}
 
