@@ -1,4 +1,4 @@
-package com.example.finalapp.model;
+package com.example.finalapp.database;
 
 import android.os.Looper;
 
@@ -22,7 +22,7 @@ public class AppExecutors {
         this.mainThread = mainThread;
         this.networkIO = networkIO;
     }
-    private static AppExecutors getInstance(){
+    public static AppExecutors getInstance(){
         if(sInstance == null){
             synchronized (LOCK){
                 sInstance = new AppExecutors(Executors.newSingleThreadExecutor(),

@@ -47,6 +47,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Open google Api fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
 
+        //RoomDatabase
+
+        if (savedInstanceState == null) {
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, new FlatFragment())
+                    .addToBackStack("FLATFRAGMENT")
+                    .commit();
+        }
+
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -64,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                             break;
                         case R.id.nav_saved:
-                            selectedFragment = new SavedFragment();
+                            selectedFragment = new FlatFragment();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
                             break;
 
