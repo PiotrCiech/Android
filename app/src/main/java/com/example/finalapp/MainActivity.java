@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Fragment fragment = new Fragment();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        Toolbar toolbar = fin
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
